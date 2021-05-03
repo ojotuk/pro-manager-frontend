@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import Brand from "../Brand/Brand";
 import signupimg from "./../../asset/img/Accept tasks-amico 1.png";
 import './style.css'
+import {States} from './../StatesLga'
 
 export default function SignUp() {
     const [input,setInput] = useState({})
@@ -56,9 +57,7 @@ export default function SignUp() {
               <label>State/Region</label>
               <div className='input-wrapper'>
                   <select  name='state' value={input.state}>
-                      <option value='1-50'>1-50</option>
-                      <option value='51-100'>51-500</option>
-                      <option value='>500'>{`>500`}</option>
+                     {States.map((state,index)=><option key={index} value={state}>{state}</option>)}
                   </select>
               </div>
             </div>
