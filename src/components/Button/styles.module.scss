@@ -1,0 +1,15 @@
+$color1:#15255D;
+$color2:#38efc3;
+
+.btn{
+    background-color: $color1;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    button{
+        color: #fff;
+        padding: 10px 20px;
+        text-transform: none;
+        font-size: 1.4rem;
+    }
+}

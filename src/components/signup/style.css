@@ -1,0 +1,104 @@
+:root {
+    --color1: #15255d;
+    --color2: #38efc3;
+  }
+
+
+  .sign-up{
+    padding: 5rem 0;
+}
+
+.sign-img-wrapper{
+    display: none;
+}
+
+.sign-description h4{
+color: var(--color1);
+font-weight: 700;
+font-size: 2.4rem;
+}
+.sign-description p{
+    font-size: 1.6rem;
+}
+
+.data-form{
+    margin: 4rem 0;
+    width: 40rem;
+    max-width: 90vw;
+}
+.data-form .form-field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+.data-form .form-field label{
+    font-size: 1.5rem;
+}
+.form-field .input-wrapper{
+display: flex;
+height: 4rem;
+border: thin solid #666666;
+
+}
+.form-field .input-wrapper input, .form-field .input-wrapper select{
+    flex: 1;
+    padding: 0 1rem;
+    outline: none;
+    border: none;
+    font-size: 1.4rem;
+}
+.form-field .input-wrapper i{
+    width: 4rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    color: var(--color2);
+}
+
+.cta-sign{
+display: flex;
+flex-direction: column;
+max-width: 40rem;
+/* align-items: center; */
+}
+.cta-sign button{
+    background-color: var(--color1);
+    width: 100%;
+    color: #fff;
+    height: 4rem;
+    font-size: 1.6rem;
+    transition: .3s;
+}
+.cta-sign button:hover{
+    background-color: var(--color2);
+    color: var(--color1);
+}
+.cta-sign p{
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+.cta-sign p a{
+    color: var(--color2);
+}
+
+
+@media screen and (min-width:990px){
+    .sign-img-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .sign-img-wrapper img{
+        width: 70%;
+    }
+    .sign-up{
+        display: flex;
+        justify-content: space-between;
+    }
+
+}

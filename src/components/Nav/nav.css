@@ -1,0 +1,212 @@
+:root {
+  --color1: #15255d;
+  --color2: #38efc3;
+}
+.nav-header{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 500;
+box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+background-color: #fff;
+}
+
+.navbar-item {
+  display: flex;
+  position: relative;
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+}
+
+.navbar-item ul {
+  list-style: none;
+}
+.nav-menu-item ul li:hover{
+    border-bottom: 2px solid var(--color1) !important;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  /* background-color: yellow; */
+}
+.nav-brand .brand-name{
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color1);
+    margin: auto 0;
+}
+.nav-brand .toggler {
+  position: absolute;
+  right: 10px;
+  width: 30px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 10000;
+}
+.nav-brand .toggler div {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color1);
+  position: relative;
+  transition: 0.3s;
+}
+.nav-brand .toggler div:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color2);
+  position: absolute;
+  bottom: 10px;
+  transition: 0.3s;
+}
+.nav-brand .toggler div::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color2);
+  position: absolute;
+  top: 10px;
+  transition: 0.3s;
+}
+.nav-brand .open div {
+  transform: translateX(-100%);
+}
+.nav-brand .open div::after {
+  transform: translateX(100%) rotate(45deg);
+  bottom: 0;
+}
+.nav-brand .open div::before {
+  transform: translateX(100%) rotate(-45deg);
+  top: 0;
+}
+.navbar-item .nav-list-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: var(--color1);
+  padding: 2rem 2rem;
+  min-height: 100vh;
+  transform: translateX(-100%);
+  transition: 0.3s;
+  z-index: 1000;
+  visibility: hidden;
+}
+.navbar-item .open-nav {
+  transform: translateX(0%);
+  visibility: visible;
+}
+.navbar-item .nav-list-wrapper .nav-menu {
+  /* position: absolute; */
+  width: 100%;
+  /* padding: 20px 10px 20px 20px; */
+}
+.nav-menu .nav-menu-brand {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: thin solid #888;
+  padding-top: 4rem;
+}
+.nav-menu .nav-menu-item {
+  margin-bottom: 2rem;
+}
+
+.nav-menu li a {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.nav-menu .nav-menu-actions-wrapper {
+  color: #fff;
+}
+.nav-menu-actions-wrapper ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+.nav-menu-actions-wrapper ul li {
+  font-size: 1.4rem;
+}
+.nav-menu-actions-wrapper ul li button {
+  background: #38efc3 !important;
+}
+.nav-menu-actions-wrapper ul li:nth-child(1) {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 990px) {
+  .navbar-item {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+
+  .navbar-item .nav-brand{
+      /* background-color: #15255d; */
+      width: 250px;
+  }
+  .navbar-item .nav-list-wrapper,
+  .navbar-item .open-nav {
+    position: static;
+    transform: translateX(0%);
+    visibility: visible;
+    min-height: fit-content;
+    display: flex;
+    padding: 0;
+    background-color: transparent !important;
+    /* flex: 1; */
+
+    /* width: fit-content; */
+  }
+  .nav-list-wrapper .nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center !important;
+    justify-content: center;
+    /* background-color: red; */
+  }
+  .nav-menu .nav-menu-item{
+      margin-bottom: 0;
+  }
+  .nav-list-wrapper .nav-menu li{
+      margin-right: 2rem;
+      border-bottom: 2px solid #fff;
+  }
+  .nav-list-wrapper .nav-menu li:hover{
+      border-bottom: 2px solid var(--color1);
+  }
+  .nav-list-wrapper li a{
+      color: #000 !important;
+  }
+  .navbar-item .nav-menu-actions-wrapper .nav-menu-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    width: 190px;
+    justify-content: flex-end;
+  }
+  .nav-brand .toggler {
+    display: none;
+  }
+  .nav-menu .nav-menu-brand {
+    display: none;
+  }
+
+  .nav-menu-actions-wrapper ul li:nth-child(1) {
+    margin-bottom: 0;
+    margin-right: 3rem;
+  }
+  .nav-menu-actions-wrapper ul li button {
+    background: var(--color1) !important;
+  }
+}

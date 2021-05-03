@@ -1,0 +1,16 @@
+.btn {
+  background-color: #15255D;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+}
+
+.btn button {
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: none;
+  font-size: 1.4rem;
+}
+/*# sourceMappingURL=styles.module.css.map */

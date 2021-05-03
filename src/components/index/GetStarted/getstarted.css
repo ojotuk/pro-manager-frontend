@@ -1,0 +1,17 @@
+:root {
+    --color1: #15255d;
+    --color2: #38efc3;
+  }
+
+.get-started{
+    padding-top: 10rem;
+    padding-bottom: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.get-started h3{
+    max-width: 100rem;
+    line-height: 4.9rem;
+}

@@ -1,0 +1,11 @@
+:root {
+    --color1: #15255d;
+    --color2: #38efc3;
+  }
+ 
+  
+  .brand-name-2 span{
+      color: #000;
+      font-size: 1.8rem;
+      font-weight: 800;
+  }
