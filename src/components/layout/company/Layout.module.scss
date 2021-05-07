@@ -28,11 +28,12 @@ $secondaryColor: #0a0362;
     .views{
         flex: 1;
         background-color: #f7f7f7;
-        padding: 20px 0 50px 0;
+        padding: 0px 0 50px 0;
         display: flex;
         flex-direction: column;
         .toolBar{
-            background:linear-gradient(to left, $primaryColor, $secondaryColor);
+    background: linear-gradient(180deg, #15255D 0%, #040818 100%); 
+            
             position: static;
             width: 100%;
             // height: 60px;
