@@ -1,14 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signUOutCompany } from "../../../redux/actions/auth";
-import Link from "@material-ui/core/Link";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import Divider from "@material-ui/core/Divider";
 import "./../../../asset/css/side-bar.css";
-
+// import classnames from 'classnames'
 import {
   ProSidebar,
   SidebarHeader,
@@ -20,8 +14,6 @@ import {
 } from "react-pro-sidebar";
 
 import styles from "./Layout.module.css";
-import { useRef } from "react";
-import { useEffect } from "react";
 import logo from "./../../../logo.svg";
 
 
@@ -44,7 +36,7 @@ const dispatch= useDispatch()
       >
         <SidebarHeader>
           <div className={styles.sideBarHeader}>
-            <img src={logo} />
+            <img src={logo} alt='brand' />
             <Menu>
             <MenuItem>Pro manager</MenuItem>
             </Menu>
@@ -159,15 +151,7 @@ const dispatch= useDispatch()
   };
 
   const ToolBar = () => {
-    const dispatch = useDispatch();
-    const panelRightRef = useRef(null);
-    useEffect(() => {
-      if (navCollapse) {
-        panelRightRef.current.classList.add(styles.padNone);
-      } else {
-        panelRightRef.current.classList.remove(styles.padNone);
-      }
-    }, [navCollapse]);
+   
     return (
       <div className={styles.toolBar}>
         <div className="container">
@@ -177,7 +161,7 @@ const dispatch= useDispatch()
             </span>
           </div>
           <div className={styles.panels}>
-            <div className={styles.panelRight} ref={panelRightRef}>
+            <div className={styles.panelRight} >
               <ul className={styles.ul}>
                 <li className={styles.adminNotify}>
                   <i className="bi bi-bell"></i>

@@ -9,7 +9,7 @@ export default function configureStore() {
   const middlewares = [thunk]
 //   const middlewareEnhancer = applyMiddleware(...middlewares)
 
-  const composeEnhancers = typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = () => createStore(rootReducer,{}, composeEnhancers(applyMiddleware(...middlewares)));
 
