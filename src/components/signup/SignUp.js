@@ -1,18 +1,35 @@
 import { Button } from "@material-ui/core";
 import React,{useState} from "react";
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import Brand from "../Brand/Brand";
 import signupimg from "./../../asset/img/Accept tasks-amico 1.png";
 import './style.css'
-import {States} from './../StatesLga'
+import {States} from '../../utility/StatesLga'
+import {signUpCompany} from "./../../utility/axios-token-manager/auth";
+import {useDispatch} from "react-redux";
+import {signUpCompanySuccess} from "../../redux/actions/auth"
+import {connect} from "react-redux"
 
-export default function SignUp() {
+
+function SignUp({auth}) {
+
+  const dispatch = useDispatch()
     const [input,setInput] = useState({})
     const handleChange = (e)=>{
         input[e.target.name] = e.target.value;
         setInput({...input})
     }
+    const handleSubmit = async ()=>{
+      const data = await signUpCompany(input);
+      console.log(data)
+      if(data) {
+        dispatch(signUpCompanySuccess(data,true))
+      }
+      console.log("done")
+    }
   return (
+    <>
+    {!auth.isLogged ? 
     <div className='container sign-in-section'>
             <Brand />
       <div className="sign-up">
@@ -48,7 +65,7 @@ export default function SignUp() {
               <div className='input-wrapper'>
                   <select  name='employeeTotal' value={input.employeeTotal}>
                       <option value='1-50'>1-50</option>
-                      <option value='51-100'>1-50</option>
+                      <option value='51-100'>51-100</option>
                       <option value='>500'>{`>500`}</option>
                   </select>
               </div>
@@ -75,7 +92,7 @@ export default function SignUp() {
             </div>
           </form>
           <div className='cta-sign'>
-              <Button >Sign Up</Button>
+              <Button onClick={()=>handleSubmit()}>Sign Up</Button>
               <p>Already have an account ? <Link to='/sign-in'>Sign in</Link></p>
           </div>
         </div>
@@ -83,6 +100,14 @@ export default function SignUp() {
           <img src={signupimg} alt='brand'/>
         </div>
       </div>
-    </div>
+    </div> : <Redirect to={{pathname: '/console', state: {from: "/signup"}}}/> }
+    </>
   );
 }
+
+function mapStateToProps(state) {
+  const { auth } = state
+  return { auth }
+}
+
+export default connect(mapStateToProps)(SignUp);
