@@ -1,17 +1,34 @@
 import { Button } from "@material-ui/core";
 import React,{useState} from "react";
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import Brand from "../Brand/Brand";
 import signinimg from "./../../asset/img/Admin-bro 1.png";
 import './style.css'
+import {connect, useDispatch} from "react-redux"
+import {signInCompany} from './../../utility/axios-token-manager/auth'
+import {signInSuccess} from "./../../redux/actions/auth"
 
-export default function SignIn() {
-    const [input,setInput] = useState({})
+
+// 
+function SignIn({auth}) {
+  const dispatch = useDispatch()
+    const [input,setInput] = useState({companyEmail:"",password:""})
     const handleChange = (e)=>{
         input[e.target.name] = e.target.value;
         setInput({...input})
     }
+    const handleSignIn = async ()=>{
+      const token = await signInCompany(input);
+      if(token) {
+        return dispatch(signInSuccess(token))
+      }else{
+        return alert("Invalid Password/Email")
+      }
+      // console.log(token)
+    }
   return (
+    <>
+    {!auth.isLogged ? 
     <div className='container sign-in-section'>
             <Brand />
       <div className="sign-up">
@@ -39,7 +56,7 @@ export default function SignIn() {
           </form>
           <div className='cta-sign'>
             <span className='forgot'>Forgot password ?</span>
-              <Button >Sign in</Button>
+              <Button onClick={()=>handleSignIn()}>Sign in</Button>
               <p>Don't have an account ? <Link to='/signup'>Sign up</Link></p>
           </div>
         </div>
@@ -47,6 +64,15 @@ export default function SignIn() {
           <img src={signinimg} alt='brand'/>
         </div>
       </div>
-    </div>
+    </div>: <Redirect to={{pathname: '/console', state: {from: "/signin"}}}/> }
+    </>
   );
 }
+
+
+function mapStateToProps(state) {
+  const { auth } = state
+  return { auth }
+}
+
+export default connect(mapStateToProps)(SignIn);

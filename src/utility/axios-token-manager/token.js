@@ -19,6 +19,7 @@ export function getValidToken() {
   const token = localStorage.getItem(key) 
   try {
     const decodedToken = decodeJWT(token)
+    // console.log(decodedToken)
     // valid token
     const now = Date.now() / 1000
     // check if token has expired

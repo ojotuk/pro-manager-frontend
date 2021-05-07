@@ -2,25 +2,27 @@ import api, { setToken } from './init'
 import { getDecodedToken } from './token'
 
 // Sends a POST request to /auth/sign-up on the server, with first name, last name, email & password registering the user and returning the JWT
-export function signUp({ name, email, password }) {
-  return api.post('/auth/sign-up', { name, email, password })
-    .then(res => {
-      const token = res.data.token
-      // console.log(token)
-      setToken(token)
+export async function signUpCompany(inputs) {
+  const response = await api.post('/auth/signup', {...inputs});
+  const token = response.data.token;
+  // console.log(token)
+  if(token){
+    setToken(token)
       return getDecodedToken()
-    })
+  }else{
+    return null
+  }
 }
 
 // Sends a POST request to /auth on the server, with the email & password returning the JWT
 // Belonging to the user with supplied credentials
-export function signIn({ email, password }) {
-  const data = {email:email,password:password}
-  console.log(data)
-  return api.post('/auth', data)
+export async function signInCompany({ companyEmail, password }) {
+  const data = {email:companyEmail,password:password}
+  // console.log(data)
+  return api.post('/auth/signin', data)
     .then(res => {
       const token = res.data.token
-      console.log(token)
+      // console.log(token)
       setToken(token)
       return getDecodedToken()
     })
