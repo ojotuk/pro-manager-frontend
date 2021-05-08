@@ -6,6 +6,7 @@ import SignUp from './components/signup/SignUp';
 import SignIn from './components/signin/SignIn';
 import Dashboard from "./components/PAGES/company/dashboard/Index";
 import {connect} from "react-redux";
+import {NotificationContainer} from 'react-notifications'
 
 
 function PrivateRoute ({component: Component, authed, ...rest}) {
@@ -22,6 +23,7 @@ function PrivateRoute ({component: Component, authed, ...rest}) {
 function App({auth}) {
 
   return (
+    <>
     <Switch>
      <Route exact path="/" component={Index}/>
      <Route exact path='/signup' component={SignUp} />
@@ -29,6 +31,8 @@ function App({auth}) {
      <PrivateRoute authed={auth.isLogged} path='/console' component={Dashboard} />
      {/* <Route exact path='/console' component={Dashboard} /> */}
     </Switch>
+    <NotificationContainer />
+    </>
   );
 }
 

@@ -7,22 +7,25 @@ import './style.css'
 import {connect, useDispatch} from "react-redux"
 import {signInCompany} from './../../utility/axios-token-manager/auth'
 import {signInSuccess} from "./../../redux/actions/auth"
+import Flash from './../../utility/Flash'
 
 
 // 
 function SignIn({auth}) {
   const dispatch = useDispatch()
+  
     const [input,setInput] = useState({companyEmail:"",password:""})
     const handleChange = (e)=>{
         input[e.target.name] = e.target.value;
         setInput({...input})
     }
     const handleSignIn = async ()=>{
+      
       const token = await signInCompany(input);
       if(token) {
         return dispatch(signInSuccess(token))
       }else{
-        return alert("Invalid Password/Email")
+        return Flash('error','Invalid login credentials','Error',5000)
       }
       // console.log(token)
     }
