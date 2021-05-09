@@ -9,23 +9,52 @@ import {signUpCompany} from "./../../utility/axios-token-manager/auth";
 import {useDispatch} from "react-redux";
 import {signUpCompanySuccess} from "../../redux/actions/auth"
 import {connect} from "react-redux"
+import Flash from './../../utility/Flash'
+import {loadStart,loadStop} from './../../redux/actions/loading'
+import validations from './validation.js';
 
 
 function SignUp({auth}) {
 
   const dispatch = useDispatch()
-    const [input,setInput] = useState({})
+    const [input,setInput] = useState(
+      { companyEmail :"",
+        companyName :"",
+        password :"",
+        password2 :"",
+        companyPhone :"",
+        employeeTotal :"1-50",
+        state :"Abia"}
+    )
     const handleChange = (e)=>{
         input[e.target.name] = e.target.value;
         setInput({...input})
     }
     const handleSubmit = async ()=>{
+      const verify = new validations(input);
+
+      const fields = verify.isValidField();
+      const validMail = verify.isValidMail();
+      const matchPassword = verify.isMatch();
+      const lengthPassword = verify.isLengthy();
+      // console.log(fields, validMail)
+
+      if(!fields)  return Flash('error','All fields are required, try again','Error',5000)
+      if(!validMail)  return Flash('error','Invalid email','Error',5000)
+      if(!matchPassword)  return Flash('error','Password must match, try again','Error',5000)
+      if(!lengthPassword)  return Flash('error','Password must be atleast 8 characters','Error',5000)
+      // console.log(fields, validMail)
+      dispatch(loadStart())
       const data = await signUpCompany(input);
-      console.log(data)
+      // console.log(data)
       if(data) {
-        dispatch(signUpCompanySuccess(data,true))
+        dispatch(loadStop())
+        Flash('success','Signup was successful','Welcome',5000)
+       return  dispatch(signUpCompanySuccess(data,true))
+      }else{
+        dispatch(loadStop())
+        return Flash('error','Fail to sign up, account already exist','Error',5000)
       }
-      console.log("done")
     }
   return (
     <>

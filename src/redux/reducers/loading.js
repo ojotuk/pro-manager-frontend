@@ -16,9 +16,9 @@ const stopLoading = (state) => {
 
 const loadingReducer = (state = initialState, action) => {
     switch (action.type) {
-      case "START":
+      case "START-LOADING":
         return startLoading(state);
-      case "STOP":
+      case "STOP-LOADING":
         return stopLoading(state);
       default:
         return state;

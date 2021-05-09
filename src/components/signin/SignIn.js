@@ -8,6 +8,7 @@ import {connect, useDispatch} from "react-redux"
 import {signInCompany} from './../../utility/axios-token-manager/auth'
 import {signInSuccess} from "./../../redux/actions/auth"
 import Flash from './../../utility/Flash'
+import {loadStart,loadStop} from './../../redux/actions/loading'
 
 
 // 
@@ -20,11 +21,14 @@ function SignIn({auth}) {
         setInput({...input})
     }
     const handleSignIn = async ()=>{
-      
+      dispatch(loadStart())
       const token = await signInCompany(input);
       if(token) {
+      dispatch(loadStop())
+      Flash('success','Welcome back','Welcome',5000)
         return dispatch(signInSuccess(token))
       }else{
+      dispatch(loadStop())
         return Flash('error','Invalid login credentials','Error',5000)
       }
       // console.log(token)

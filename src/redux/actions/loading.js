@@ -1,11 +1,11 @@
 
 export const loadStart=()=>{
     return{
-        type:"START"
+        type:"START-LOADING"
     }
 }
 export const loadStop=()=>{
     return{
-        type:"STOP"
+        type:"STOP-LOADING"
     }
 }

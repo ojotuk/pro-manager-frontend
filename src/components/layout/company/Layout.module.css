@@ -23,6 +23,22 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+}
+
+.layout .sideWrapper .toggleCollapse {
+  position: absolute;
+  top: 0rem;
+  right: 0;
+  width: 100%;
+  padding-right: 2rem;
+  font-size: 2.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .layout .views {
@@ -30,7 +46,7 @@
       -ms-flex: 1;
           flex: 1;
   background-color: #f7f7f7;
-  padding: 0px 0 50px 0;
+  padding: 50px 0 50px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,8 +57,6 @@
 }
 
 .layout .views .toolBar {
-  background: -webkit-gradient(linear, left top, left bottom, from(#15255D), to(#040818));
-  background: linear-gradient(180deg, #15255D 0%, #040818 100%);
   position: static;
   width: 100%;
   display: -webkit-box;
@@ -85,10 +99,55 @@
   height: 60px;
 }
 
+.layout .views .toolBar .panels .search {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4rem;
+  border: thin solid #c4c4c4;
+  border-radius: 3px;
+  background-color: #fff;
+  margin-right: 4rem;
+}
+
+.layout .views .toolBar .panels .search input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: none;
+  font-size: 1.6rem;
+}
+
+.layout .views .toolBar .panels .search .svgWrapper {
+  width: 4rem;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .layout .views .toolBar .panels .panelRight {
-  padding-right: 270px;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   height: 100%;
 }
 
@@ -117,21 +176,19 @@
 
 .layout .views .toolBar .panels .panelRight .ul li i {
   font-size: 20px;
-  color: #fff;
+  color: #000;
 }
 
 .layout .views .toolBar .panels .panelRight .ul li sup {
   font-size: 14px;
-  background-color: crimson;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 12px;
+  color: #000;
+  padding: 5px;
 }
 
 .layout .views .toolBar .panels .panelRight .ul .adminChat {
   position: relative;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .layout .views .toolBar .panels .panelRight .ul .adminChat .messagePane {
@@ -146,8 +203,8 @@
           transform: translateX(-50%);
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .layout .views .toolBar .panels .panelRight .ul .adminChat:hover {
@@ -170,8 +227,8 @@
 
 .layout .views .toolBar .panels .panelRight .ul .adminNotify {
   position: relative;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .layout .views .toolBar .panels .panelRight .ul .adminNotify .notifyPane {
@@ -186,8 +243,8 @@
           transform: translateX(-50%);
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .layout .views .toolBar .panels .panelRight .ul .adminNotify .notifyPane .notifyContainer {
@@ -206,8 +263,8 @@
 
 .layout .views .toolBar .panels .panelRight .ul .adminPaneDrop {
   position: relative;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .layout .views .toolBar .panels .panelRight .ul .adminPaneDrop .adminPane {
@@ -222,8 +279,8 @@
           transform: translateX(-50%);
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .layout .views .toolBar .panels .panelRight .ul .adminPaneDrop .adminPane .adminContainer {
@@ -240,8 +297,8 @@
 
 .layout .views .toolBar .panels .panelRight .ul .adminPaneDrop .adminPane .adminContainer ul li {
   margin-bottom: 5px;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   padding: 5px 10px;
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from "react-redux"
-import Layout from './../../../layout/company/Layout'
-import PageTitle from './../../../PageTitle/Title'
+import Layout from '../../../layout/company/Layout'
+import PageTitle from '../../../PageTitle/Title'
 
 
 
@@ -10,7 +10,7 @@ function Index() {
         <>
         <Layout>
         <div>
-            <PageTitle title="Dashboard " />
+            <PageTitle title="Employee Data " />
         </div>
         </Layout>
         </>
