@@ -58,6 +58,8 @@ $color2: #38efc3;
 .taskOpen{
     right: 0px;
     transition: .3s;
+    height: calc(100vh - 40px);
+    overflow-y: auto;
 }
 .taskExpand{
     position: fixed;
