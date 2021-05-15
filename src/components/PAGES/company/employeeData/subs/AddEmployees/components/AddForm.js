@@ -11,12 +11,14 @@ export default function AddForm() {
 const [input,setInput] = useState({firstName:"",lastName:"", jobTitle:"", email:"",employmentType:"",department:"",salary:"",hireDate:""})
 let firstName=React.createRef()
 const handleChange=(e)=>{
-    if(e.target.name==="email"){
-    input[e.target.name] = e.target.value.trim()
-    }else{
-        input[e.target.name]=e.target.value.trim().charAt(0).toUpperCase() + e.target.value.trim().slice(1).toLowerCase()
-    }
+    if(e.target.name==="email" || e.target.name==="employmentType" || e.target.name==="department"){
+    input[e.target.name] = e.target.value.trim();
     setInput({...input})
+    }else{
+        input[e.target.name]=e.target.value.trim().charAt(0).toUpperCase() + e.target.value.trim().slice(1).toLowerCase();
+    setInput({...input})
+
+    }
 }
 const handleSubmit =()=>{
 
@@ -61,7 +63,7 @@ useAxios.post('/auth/sign-up/005/add',input)
                           name="hireDate" value={input.hireDate}
                          onChange={handleChange}
                           />
-                        <TextField variant="filled" name="employmentType" value={input.employmentType} onChange={handleChange} label="EMPLOYEMENT TYPE" className='col-lg-5 mb-4' select>
+                        <TextField variant="filled" name="employmentType" value={input.employmentType} onChange={(e)=>handleChange(e)} label="EMPLOYEMENT TYPE" className='col-lg-5 mb-4' select>
                             {employementType.map((type,index)=><MenuItem className='custom' key={index} value={type}>{type}</MenuItem>)}
                         </TextField>
                         <TextField variant="filled" name="department"
