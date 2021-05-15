@@ -73,24 +73,25 @@ export default function Index({ match }) {
   const classes = useStyles();
   // console.log(match.params.id)
   const [profile, setProfile] = useState({});
-
-  const getUserProfile = async () => {
-    const response = await useAxios.get(
-      `/app/v2/004/employee/profile/${match.params.id}`
-    );
-    if (response.data.code === 200) {
-      setProfile({ ...response.data.profile });
-      dispatch(getEmployeeProfile(response.data.profile));
-    }else{
-      Flash('error',"User not found","Error",3000)
-      // setProfile({ ...response.data.profile });
-      // dispatch(getEmployeeProfile(response.data.profile));
-    }
-    // console.log(response.data.profile);
-  };
+const id=match.params.id
+  
   useEffect(() => {
+    const getUserProfile = async () => {
+      const response = await useAxios.get(
+        `/app/v2/004/employee/profile/${id}`
+      );
+      if (response.data.code === 200) {
+        setProfile({ ...response.data.profile });
+        dispatch(getEmployeeProfile(response.data.profile));
+      }else{
+        Flash('error',"User not found","Error",3000)
+        // setProfile({ ...response.data.profile });
+        // dispatch(getEmployeeProfile(response.data.profile));
+      }
+      // console.log(response.data.profile);
+    };
     getUserProfile();
-  }, []);
+  }, [dispatch,id]);
 
   const classhandle = (num) =>
     classnames({

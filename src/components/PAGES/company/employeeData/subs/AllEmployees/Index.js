@@ -9,20 +9,20 @@ import { loadStart, loadStop } from "./../../../../../../redux/actions/loading";
 export default function Index() {
   const dispatch = useDispatch();
 
-  const getEmployees = async () => {
-    dispatch(loadStart());
-    const response = await useAxios.get("/app/v2/004/all-employees");
-    if (response.data.code === 200) {
-      dispatch(loadStop());
-      dispatch(getCompanyProfile(response.data.client));
-    } else {
-      dispatch(loadStop());
-    }
-  };
-
+  // 
   useEffect(() => {
+    const getEmployees = async () => {
+      dispatch(loadStart());
+      const response = await useAxios.get("/app/v2/004/all-employees");
+      if (response.data.code === 200) {
+        dispatch(loadStop());
+        dispatch(getCompanyProfile(response.data.client));
+      } else {
+        dispatch(loadStop());
+      }
+    };
     getEmployees();
-  }, []);
+  }, [dispatch]);
   return (
     <div>
       <AddEmployeeAction />

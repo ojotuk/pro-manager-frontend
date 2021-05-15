@@ -80,7 +80,7 @@ setData(employees)
       button: true,
       cell: (row) => <Link to={`/profile/${row._id}`}>view</Link>,
     },
-  ]);
+  ],[]);
 
   return (
     <>

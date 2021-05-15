@@ -53,18 +53,20 @@ function TaskSender({ state, expandHandler, expand, xHandler }) {
     setAdd(checked)
   };
   useEffect(()=>{
+    const companyEmployees=company.employees;
+    const employeeId=employeeProfile._id
     if (add) {
         //   choose team membership
         // exclude current profile from list;
-        const filtered = company.employees.filter(
-          (item) => item._id !== employeeProfile._id
+        const filtered = companyEmployees.filter(
+          (item) => item._id !== employeeId
         );
         setEmployees([...filtered]);
       } else {
         setEmployees([]);
         setChecked([]);
       }
-  },[add])
+  },[add,company?.employees,employeeProfile?._id])
 
   const closeTaskMan = () => {
     //   calld onsubmit success
