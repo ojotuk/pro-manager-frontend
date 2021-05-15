@@ -27,7 +27,7 @@ function PrivateRoute ({component: Component, authed, ...rest}) {
 }
 
 function App({auth,loading}) {
-
+// console.log('app.js')
   return (
     <>
     <Switch>

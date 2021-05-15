@@ -29,6 +29,7 @@ $color2: #38efc3;
     flex-direction: column;
     // transition: cubic-bezier(0.39, 0.575, 0.565, 1);
     z-index: 10;
+    max-height: 80vh;
     .toolbar{
         display: flex;
         position: relative;
@@ -66,6 +67,7 @@ $color2: #38efc3;
     // width: 80%;
     width: calc(100% - 270px);
     height: calc(100% - 10px);
+    max-height: 98vh;
     // background-color: red;
 }
 .taskPaper{
