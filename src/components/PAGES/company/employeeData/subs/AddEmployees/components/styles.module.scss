@@ -1,0 +1,35 @@
+$color1:#15255D;
+$color2:#38efc3;
+
+
+.wrapper{
+    font-size: 16px !important;
+    margin-top: 40px;
+    input,label,select,option{
+        font-size: 16px;
+    }
+    .content{
+        border: thin solid #666;
+        width: 700px;
+        max-width: 80vw;
+        .header{
+            padding: 20px;
+            border-bottom:thin solid #666 ;
+            text-transform: uppercase;
+        }
+        .formItem{
+            padding: 20px;
+
+        }
+        .cta{
+            background-color: $color1;
+            margin-top: 60px;
+            button{
+                width: 100%;
+                color: #fff;
+                font-size: 16px;
+            }
+        }
+    }
+   
+}

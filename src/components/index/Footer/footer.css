@@ -20,22 +20,22 @@
 .footer ul li a{
   text-decoration: none;
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 16px;
 }
 
 .top-footer h4{
 text-transform: uppercase;
-margin-bottom: 2rem;
+margin-bottom: 20px;
 }
 
 .bottom-footer{
   /* display: flex; */
   
-  margin-top: 10rem;
+  margin-top: 100px;
 }
 .brand-name{
-  margin-bottom: 4rem;
-  font-size: 1.6rem;
+  margin-bottom: 40px;
+  font-size: 16px;
   font-weight: 900;
 }
 .footer a{
@@ -48,7 +48,7 @@ margin-bottom: 2rem;
 .policy{
   display: flex;
   flex-direction: column;
-  margin-bottom: 4rem;
+  margin-bottom: 40px;
 }
 .policy li{
   margin-bottom: 2rem;
@@ -61,10 +61,10 @@ margin-bottom: 2rem;
 .contact-media a{
   text-decoration: none;
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 16px;
 }
 .contact-media p{
-  font-size: 1.6rem;
+  font-size: 16px;
 }
 
 
@@ -73,7 +73,7 @@ margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-top: 10rem;
+    margin-top: 100px;
   }
   .brand-name{
     margin-bottom: 0;
@@ -84,7 +84,7 @@ margin-bottom: 2rem;
     margin-bottom: 0;
   }
   .policy li{
-    margin-right: 2rem;
+    margin-right: 20px;
   }
   .contact-media{
     display: flex;

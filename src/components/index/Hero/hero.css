@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 20px;
-  padding-top: 15rem;
+  padding-top: 150px;
   min-height: 100vh;
 
 }
@@ -32,12 +32,12 @@
 .hero-wrapper .hero-description h1{
 color:var(--color1);
 font-weight: 800;
-line-height: 6.5rem;
+line-height: 65px;
 }
 .hero-wrapper .hero-description p{
 margin: 40px 0;
-font-size: 1.4rem;
-line-height: 3.8rem;
+font-size: 14px;
+line-height: 38px;
 }
 .hero-description .demo-request{
     display: flex;
@@ -49,7 +49,7 @@ border: thin solid #888;
     flex: 1;
     border: none;
     outline: none;
-    font-size: 1.2rem;
+    font-size: 12px;
     padding: 0 10px;
 }
 .slide-wrapper{
@@ -64,7 +64,7 @@ border: thin solid #888;
 }
 @media screen and (min-width:990px) {
     .hero-wrapper{
-        padding-top: 10rem;
+        padding-top: 100px;
         display: flex;
     }
 
@@ -78,18 +78,18 @@ border: thin solid #888;
     align-items: center;
     }
     .hero-wrapper .hero-description h1{
-        font-size: 4.8rem;
-        max-width: 50rem;
+        font-size: 48px;
+        max-width: 500px;
     }
     .hero-wrapper .hero-description p{
-        font-size: 1.8rem;
-        max-width: 40rem;
+        font-size: 18px;
+        max-width: 400px;
     }
     .hero-wrapper .carousel-wrapper{
         /* width: 450px; */
     }
     .demo-request{
-        max-width: 40rem;
+        max-width: 400px;
     }
     
 }

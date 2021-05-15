@@ -1,0 +1,36 @@
+.wrapper {
+  font-size: 16px !important;
+  margin-top: 40px;
+}
+
+.wrapper input, .wrapper label, .wrapper select, .wrapper option {
+  font-size: 16px;
+}
+
+.wrapper .content {
+  border: thin solid #666;
+  width: 700px;
+  max-width: 80vw;
+}
+
+.wrapper .content .header {
+  padding: 20px;
+  border-bottom: thin solid #666;
+  text-transform: uppercase;
+}
+
+.wrapper .content .formItem {
+  padding: 20px;
+}
+
+.wrapper .content .cta {
+  background-color: #15255D;
+  margin-top: 60px;
+}
+
+.wrapper .content .cta button {
+  width: 100%;
+  color: #fff;
+  font-size: 16px;
+}
+/*# sourceMappingURL=styles.module.css.map */

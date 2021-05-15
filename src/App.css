@@ -1,0 +1,40 @@
+:root {
+  --color1: #15255d;
+  --color2: #38efc3;
+}
+/* modified material ui */
+/* .custom .Mui-selected{
+    font-size: 1.6rem !important;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+} */
+
+.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded
+  > ul
+  > li.MuiButtonBase-root.MuiListItem-root.MuiMenuItem-root.custom {
+  font-size: 16px !important;
+}
+
+/* client employee tab */
+
+.switch-tabs{
+  transition: .3s;
+}
+.active-tab{
+  border-left: 4px solid var(--color1) !important;
+  transition: .3s;
+}
+
+.info-container{
+  border: thin solid #ddd;
+}
+.info-container .title{
+  text-transform: uppercase;
+}
+.info-container .key{
+  font-weight: 600;
+}
+
+.active-nav{
+  background:#293665 ;
+}

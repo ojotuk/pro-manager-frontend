@@ -26,7 +26,7 @@ function PrivateRoute ({component: Component, authed, ...rest}) {
   )
 }
 
-function App({auth}) {
+function App({auth,loading}) {
 
   return (
     <>
@@ -43,15 +43,15 @@ function App({auth}) {
      {/* <Route exact path='/console' component={Dashboard} /> */}
     </Switch>
     <NotificationContainer />
-    <ApiLoader />
+    <ApiLoader state={loading.isLoading}/>
     </>
   );
 }
 
 
 function mapStateToProps(state) {
-  const { auth } = state
-  return { auth }
+  const { auth,loading } = state
+  return { auth,loading }
 }
 
 export default connect(mapStateToProps)(App);

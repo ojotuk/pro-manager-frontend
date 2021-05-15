@@ -1,0 +1,26 @@
+
+$color1: #15255d;
+$color2: #38efc3;
+
+.filter{
+    // background-color: red;
+    // padding-left: 20px;
+    margin: 40px 0;
+    .content{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    max-width: 500px;
+    margin-left: auto;
+    }
+   
+}
+
+.addBtn{
+     a{
+        text-transform: none;
+        text-decoration: none;
+        color: $color1;
+        font-size: 16px;
+    }
+}

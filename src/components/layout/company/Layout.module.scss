@@ -5,7 +5,8 @@ $secondaryColor: #0a0362;
 
 .layout {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
+  // min-height: 100vh;
   .sideWrapper {
     font-family: $bodyFont;
     height: 100vh; // check resp
@@ -24,12 +25,12 @@ $secondaryColor: #0a0362;
     }
     .toggleCollapse {
       position: absolute;
-      top: 0rem;
+      top: 0px;
       right: 0;
     //   background-color: red;
       width: 100%;
-      padding-right: 2rem;
-      font-size: 2.2rem;
+      padding-right: 20px;
+      font-size: 22px;
       display: flex;
       justify-content: flex-end;
     }
@@ -69,21 +70,21 @@ $secondaryColor: #0a0362;
           flex: 1;
           display: flex;
           align-items: center;
-          height: 4rem;
+          height: 40px;
           border: thin solid #c4c4c4;
           border-radius: 3px;
           background-color: #fff;
-          margin-right: 4rem;
+          margin-right: 40px;
           input {
             flex: 1;
             height: 100%;
             outline: none;
             border: none;
             background-color: none;
-            font-size: 1.6rem;
+            font-size: 16px;
           }
           .svgWrapper {
-            width: 4rem;
+            width: 40px;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -148,7 +149,7 @@ $secondaryColor: #0a0362;
                   opacity: 1;
                   visibility: visible;
                   span {
-                    font-size: 1.6rem !important;
+                    font-size: 16px !important;
                   }
                   i {
                     color: $primaryColor;
@@ -265,6 +266,9 @@ $secondaryColor: #0a0362;
     // background-color: red;
     flex: 1;
     font-family: $bodyFont;
+    overflow: auto;
+    position: relative;
+    overflow-x: hidden;
   }
 }
 

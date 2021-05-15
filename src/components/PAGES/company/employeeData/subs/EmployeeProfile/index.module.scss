@@ -1,0 +1,80 @@
+$color1: #15255d;
+$color2: #38efc3;
+
+
+.brief{
+    margin-bottom: 50px;
+    .actionIcons{
+        transform: translateY(10px);
+
+        i{
+            background-color: $color1;
+            color: #fff;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+        }
+    }
+}
+
+// Task sender
+
+.taskSender{
+    width: 500px;
+    position: fixed;
+    right: -10000px;
+    bottom: 20px;
+    transition: .3s linear;
+    display: flex;
+    flex-direction: column;
+    // transition: cubic-bezier(0.39, 0.575, 0.565, 1);
+    z-index: 10;
+    .toolbar{
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        width: 100%;
+        .actions{
+            // position: ;
+            width: 150px;
+            display: flex;
+            justify-content: space-between;
+            button{
+                color: #fff;
+                cursor: pointer;
+            &:last-child{
+                color: crimson;
+            }
+        }
+        }
+    }
+    .content{
+        height: 100%;
+        // flex: 1;
+        padding: 20px 10px;
+        position: relative;
+    }
+}
+.taskOpen{
+    right: 0px;
+    transition: .3s;
+}
+.taskExpand{
+    position: fixed;
+    // width: 80%;
+    width: calc(100% - 270px);
+    height: calc(100% - 10px);
+    // background-color: red;
+}
+.taskPaper{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+}
+
+.teamList{
+    padding: 20px 0;
+    height: 300px;
+    overflow-y: auto;
+}

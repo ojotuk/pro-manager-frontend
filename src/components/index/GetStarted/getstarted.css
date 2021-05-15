@@ -4,14 +4,14 @@
   }
 
 .get-started{
-    padding-top: 10rem;
-    padding-bottom: 15rem;
+    padding-top: 100px;
+    padding-bottom: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .get-started h3{
-    max-width: 100rem;
-    line-height: 4.9rem;
+    max-width: 1000px;
+    line-height: 49px;
 }

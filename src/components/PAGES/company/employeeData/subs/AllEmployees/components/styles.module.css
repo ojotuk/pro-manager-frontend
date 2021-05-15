@@ -1,0 +1,25 @@
+.filter {
+  margin: 40px 0;
+}
+
+.filter .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  max-width: 500px;
+  margin-left: auto;
+}
+
+.addBtn a {
+  text-transform: none;
+  text-decoration: none;
+  color: #15255d;
+  font-size: 16px;
+}
+/*# sourceMappingURL=styles.module.css.map */

@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .layout .sideWrapper {
@@ -28,11 +28,11 @@
 
 .layout .sideWrapper .toggleCollapse {
   position: absolute;
-  top: 0rem;
+  top: 0px;
   right: 0;
   width: 100%;
-  padding-right: 2rem;
-  font-size: 2.2rem;
+  padding-right: 20px;
+  font-size: 22px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,11 +109,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 4rem;
+  height: 40px;
   border: thin solid #c4c4c4;
   border-radius: 3px;
   background-color: #fff;
-  margin-right: 4rem;
+  margin-right: 40px;
 }
 
 .layout .views .toolBar .panels .search input {
@@ -124,11 +124,11 @@
   outline: none;
   border: none;
   background-color: none;
-  font-size: 1.6rem;
+  font-size: 16px;
 }
 
 .layout .views .toolBar .panels .search .svgWrapper {
-  width: 4rem;
+  width: 40px;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -218,7 +218,7 @@
 }
 
 .layout .views .toolBar .panels .panelRight .ul .adminChat:hover .messagePane span {
-  font-size: 1.6rem !important;
+  font-size: 16px !important;
 }
 
 .layout .views .toolBar .panels .panelRight .ul .adminChat:hover .messagePane i {
@@ -357,6 +357,9 @@
       -ms-flex: 1;
           flex: 1;
   font-family: "Montserrat", sans-serif;
+  overflow: auto;
+  position: relative;
+  overflow-x: hidden;
 }
 
 @media screen and (max-width: 768px) {

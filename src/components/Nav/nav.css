@@ -14,8 +14,8 @@ background-color: #fff;
 .navbar-item {
   display: flex;
   position: relative;
-  padding-top: 5rem;
-  padding-bottom: 1rem;
+  padding-top: 50px;
+  padding-bottom: 10px;
 }
 
 .navbar-item ul {
@@ -32,7 +32,7 @@ background-color: #fff;
   /* background-color: yellow; */
 }
 .nav-brand .brand-name{
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 800;
     color: var(--color1);
     margin: auto 0;
@@ -92,7 +92,7 @@ background-color: #fff;
   top: 0;
   width: 100%;
   background-color: var(--color1);
-  padding: 2rem 2rem;
+  padding: 20px 20px;
   min-height: 100vh;
   transform: translateX(-100%);
   transition: 0.3s;
@@ -109,18 +109,18 @@ background-color: #fff;
   /* padding: 20px 10px 20px 20px; */
 }
 .nav-menu .nav-menu-brand {
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
   border-bottom: thin solid #888;
-  padding-top: 4rem;
+  padding-top: 40px;
 }
 .nav-menu .nav-menu-item {
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
 }
 
 .nav-menu li a {
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 14px;
 }
 
 .nav-menu .nav-menu-actions-wrapper {
@@ -134,13 +134,13 @@ a:hover{
     text-decoration: none;
 }
 .nav-menu-actions-wrapper ul li {
-  font-size: 1.4rem;
+  font-size: 14px;
 }
 .nav-menu-actions-wrapper ul li button {
   background: #38efc3 !important;
 }
 .nav-menu-actions-wrapper ul li:nth-child(1) {
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
 }
 
 @media screen and (min-width: 990px) {
@@ -179,7 +179,7 @@ a:hover{
       margin-bottom: 0;
   }
   .nav-list-wrapper .nav-menu li{
-      margin-right: 2rem;
+      margin-right: 20px;
       border-bottom: 2px solid #fff;
   }
   .nav-list-wrapper .nav-menu li:hover{
@@ -204,7 +204,7 @@ a:hover{
 
   .nav-menu-actions-wrapper ul li:nth-child(1) {
     margin-bottom: 0;
-    margin-right: 3rem;
+    margin-right: 30px;
   }
   .nav-menu-actions-wrapper ul li button {
     background: var(--color1) !important;

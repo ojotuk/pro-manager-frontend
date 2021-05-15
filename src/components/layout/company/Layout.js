@@ -22,6 +22,8 @@ export default function Layout({ children }) {
   const [navCollapse, setNavCollapse] = useState(false);
   const [navToggle, setNavToggle] = useState(false);
   const dispatch = useDispatch();
+  const path = window.location.pathname
+  
   const SideBar = ({ collapsed }) => {
     return (
       // <div style={{position:'fixed', height:'100vh'}}>
@@ -189,11 +191,11 @@ export default function Layout({ children }) {
                   </defs>
                 </svg>
               }
+              className={path==="/employee-data" ? "active-nav":""}
             >
-              <Link to="/employee-data" style={{ color: "#fff" }}>
-                {" "}
+              <a href="/employee-data" style={{ color: "#fff" }}>
                 Employee Data
-              </Link>
+              </a>
             </MenuItem>
           </Menu>
           <Menu>

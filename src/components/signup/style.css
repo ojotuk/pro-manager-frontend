@@ -5,7 +5,7 @@
 
 
   .sign-up{
-    padding: 5rem 0;
+    padding: 50px 0;
 }
 
 .sign-img-wrapper{
@@ -15,62 +15,62 @@
 .sign-description h4{
 color: var(--color1);
 font-weight: 700;
-font-size: 2.4rem;
+font-size: 24px;
 }
 .sign-description p{
-    font-size: 1.6rem;
+    font-size: 16px;
 }
 
 .data-form{
-    margin: 4rem 0;
-    width: 40rem;
+    margin: 40px 0;
+    width: 400px;
     max-width: 90vw;
 }
 .data-form .form-field{
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 2rem;
+    margin-bottom: 20px;
 }
 .data-form .form-field label{
-    font-size: 1.5rem;
+    font-size: 15px;
 }
 .form-field .input-wrapper{
 display: flex;
-height: 4rem;
+height: 40px;
 border: thin solid #666666;
 
 }
 .form-field .input-wrapper input, .form-field .input-wrapper select{
     flex: 1;
-    padding: 0 1rem;
+    padding: 0 10px;
     outline: none;
     border: none;
-    font-size: 1.4rem;
+    font-size: 14px;
 }
 .form-field .input-wrapper i{
-    width: 4rem;
+    width: 40px;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 16px;
     color: var(--color2);
 }
 
 .cta-sign{
 display: flex;
 flex-direction: column;
-max-width: 40rem;
+max-width: 400px;
 /* align-items: center; */
 }
 .cta-sign button{
     background-color: var(--color1);
     width: 100%;
     color: #fff;
-    height: 4rem;
-    font-size: 1.6rem;
+    height: 40px;
+    font-size: 16px;
     transition: .3s;
 }
 .cta-sign button:hover{
@@ -78,8 +78,8 @@ max-width: 40rem;
     color: var(--color1);
 }
 .cta-sign p{
-    font-size: 1.5rem;
-    margin-top: 3rem;
+    font-size: 15px;
+    margin-top: 30px;
     text-align: center;
 }
 .cta-sign p a{
