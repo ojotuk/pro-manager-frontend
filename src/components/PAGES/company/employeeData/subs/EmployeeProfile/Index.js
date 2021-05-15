@@ -1,6 +1,5 @@
 import {
   Avatar,
-  Menu,
   MenuList,
   makeStyles,
   MenuItem,

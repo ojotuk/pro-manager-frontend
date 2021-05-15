@@ -1,5 +1,5 @@
 import { Button, TextField, MenuItem } from '@material-ui/core'
-import React,{useRef, useState} from 'react'
+import React,{useState} from 'react'
 // import { MenuItem } from 'react-pro-sidebar'
 import styles from './styles.module.css'
 import {departments,employementType} from './../../../../../../settings/choices';

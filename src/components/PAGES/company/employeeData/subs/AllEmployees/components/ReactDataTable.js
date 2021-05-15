@@ -49,9 +49,9 @@ setData(employees)
 
   const [param,setParam] = useState({employmentType:"",department:""})
 
-  const handleRowClick=(user)=>{
-    console.log('user is ', user)
-  }
+  // const handleRowClick=(user)=>{
+  //   console.log('user is ', user)
+  // }
 
   const columns = React.useMemo(() => [
     {

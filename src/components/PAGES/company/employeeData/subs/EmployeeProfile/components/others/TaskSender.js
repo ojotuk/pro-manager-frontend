@@ -26,14 +26,14 @@ import {
   loadStart,
   loadStop,
 } from "../../../../../../../../redux/actions/loading";
-import ApiLoader from "../../../../../../../../utility/ApiLoader";
+
 
 //
 function TaskSender({ state, expandHandler, expand, xHandler }) {
   //
   const dispatch = useDispatch();
   //
-  const { company, loading, auth } = state;
+  const { company} = state;
   const { employeeProfile } = company;
   const [input, setInput] = useState({
     start: "",
