@@ -13,6 +13,7 @@ import Calendar from "./components/PAGES/company/calender/Calender";
 import {connect} from "react-redux";
 import {NotificationContainer} from 'react-notifications'
 import ApiLoader from './utility/ApiLoader';
+import Task from './components/PAGES/company/task/Task';
 
 
 function PrivateRoute ({component: Component, authed, ...rest}) {
@@ -39,6 +40,7 @@ function App({auth,loading}) {
      <PrivateRoute authed={auth.isLogged} path='/employee-payroll' component={Payroll} />
      <PrivateRoute authed={auth.isLogged} path='/employee-attendance-leave' component={Attendance} />
      <PrivateRoute authed={auth.isLogged} path='/employee-time-sheet' component={TimeSheet} />
+     <PrivateRoute authed={auth.isLogged} path='/task-management' component={Task} />
      <PrivateRoute authed={auth.isLogged} path='/calendar' component={Calendar} />
      {/* <Route exact path='/console' component={Dashboard} /> */}
     </Switch>

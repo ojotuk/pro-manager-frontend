@@ -61,6 +61,7 @@ $color2: #38efc3;
     transition: .3s;
     height: calc(100vh - 40px);
     overflow-y: auto;
+    box-shadow: -2px 2px 4px rgba($color: #000000, $alpha: .10);
 }
 .taskExpand{
     position: fixed;

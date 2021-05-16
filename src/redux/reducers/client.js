@@ -4,6 +4,7 @@
 const initialState={
     employees:[],
     leaves:[],
+    tasks:[],
     employeeProfile:{}
 }
 

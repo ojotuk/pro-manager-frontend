@@ -53,7 +53,7 @@ function TaskSender({ state, expandHandler, expand, xHandler }) {
     setAdd(checked)
   };
   useEffect(()=>{
-    const companyEmployees=company.employees;
+    const companyEmployees=employeeProfile.company?.employees;
     const employeeId=employeeProfile._id
     if (add) {
         //   choose team membership
@@ -66,7 +66,7 @@ function TaskSender({ state, expandHandler, expand, xHandler }) {
         setEmployees([]);
         setChecked([]);
       }
-  },[add,company?.employees,employeeProfile?._id])
+  },[add,employeeProfile.company?.employees,employeeProfile?._id])
 
   const closeTaskMan = () => {
     //   calld onsubmit success
