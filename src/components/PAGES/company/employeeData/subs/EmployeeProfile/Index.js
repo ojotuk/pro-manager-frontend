@@ -101,7 +101,9 @@ const id=match.params.id
 
     // state for task added;
     const [task,setTask] = useState(false)
-    const [expand,setExpand] = useState(true)
+    const [expand,setExpand] = useState(false)
+
+    // 
     const classtaskHandler =()=> {
         let defaultClass = styles.taskSender;
         const openClass = styles.taskOpen;

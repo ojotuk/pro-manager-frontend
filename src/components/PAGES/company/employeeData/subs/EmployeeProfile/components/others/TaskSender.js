@@ -16,6 +16,7 @@ import {
   ListItemAvatar,
   ListItemText,
   ListItemSecondaryAction,
+  // ClickAwayListener
 } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
@@ -219,7 +220,7 @@ function TaskSender({ state, expandHandler, expand, xHandler }) {
             </FormGroup>
           </div>
           <div className={styles.teamList}>
-            <List dense className="hhj">
+            <List dense className="emp-list">
               {employees.map((value, index) => {
                 const labelId = `checkbox-list-secondary-label-${value._id}`;
                 return (

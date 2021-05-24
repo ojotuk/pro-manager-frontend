@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import styles from './styles.module.css'
 
 // 
-export default function AddEmployeeAction() {
+export default function AddAction({link, text}) {
   return (
     <Button className={styles.addBtn}>
-        <Link to='/new'>
+        <Link to={link}>
         <span>
-        Add new employee
+        {text}
         <svg
           width="23"
           height="23"

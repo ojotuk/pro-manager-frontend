@@ -1,31 +1,26 @@
 import React, { useEffect } from 'react'
 import {connect} from "react-redux"
-import useAxios from '../../../../utility/axios-token-manager/init'
+// import useAxios from '../../../../utility/axios-token-manager/init'
 import Layout from '../../../layout/company/Layout'
 import PageTitle from '../../../PageTitle/Title'
-
-
+import ReactTable from './subs/ReactDataTable'
+import {getTask} from './../../../../redux/actions/client'
+import {useDispatch} from 'react-redux';
+import AddAction from '../../../AddAction/AddAction'
 
 function Index() {
+    const dispatch = useDispatch()
     // 
     useEffect(()=>{
-        const getTask=async ()=>{
-            try {
-                const tasks = await useAxios.get('/app/v2/004/all-task')
-                console.log(tasks.data)
-            } catch (error) {
-             console.log(error)   
-            }
-            
-        }
-
-        getTask()
-    },[])
+        dispatch(getTask())
+    },[dispatch])
     return (
         <>
         <Layout>
         <div>
             <PageTitle title="Task Manager" />
+            <AddAction text="Add Task" link="/task-new"/>
+            <ReactTable />
         </div>
         </Layout>
         </>

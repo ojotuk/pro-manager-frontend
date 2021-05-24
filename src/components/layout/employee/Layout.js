@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch,connect } from "react-redux";
 import { signUOutCompany } from "../../../redux/actions/auth";
 import "./../../../asset/css/side-bar.css";
 import { Link } from "react-router-dom";
@@ -16,14 +16,41 @@ import {
 import styles from "./Layout.module.css";
 import logo from "./../../../logo.svg";
 import { Avatar } from "@material-ui/core";
+import useAxios from "../../../utility/axios-token-manager/init";
+import {getMyProfile} from './../../../redux/actions/employee';
 
 //
-export default function Layout({ children }) {
+function Layout({ children, profile }) {
+// console.log(profile)
+  const dispatch = useDispatch()
+  // 
   const [navCollapse, setNavCollapse] = useState(false);
   const [navToggle, setNavToggle] = useState(false);
-  const dispatch = useDispatch();
+  // 
   const path = window.location.pathname;
-
+  // 
+useEffect(()=>{
+  const getProfile=async ()=>{
+    try {
+    const response =await useAxios.get('/app/v2/005/my-profile')
+      if(response){
+        // console.log(response.data)
+        dispatch(getMyProfile(response.data))
+        return response.data
+      }
+    } catch (error) {
+      console.log(error)
+      return error
+    }
+  }
+  if(profile.reload){
+  getProfile()
+  }
+  // else{
+  //   console.log('not reloading')
+  // }
+},[profile.reload,dispatch])
+  
   const SideBar = ({ collapsed }) => {
     return (
       // <div style={{position:'fixed', height:'100vh'}}>
@@ -79,33 +106,22 @@ export default function Layout({ children }) {
                 </svg>
               }
             >
-              <Link to="/console" style={{ color: "#fff" }}>
-                {" "}
-                Dashboard{" "}
+              <Link to="/005/console" style={{ color: "#fff" }}>
+                Dashboard
               </Link>
             </MenuItem>
           </Menu>
           <Menu>
             <MenuItem
               icon={
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M21 24H3C2.20435 24 1.44129 23.6839 0.87868 23.1213C0.31607 22.5587 0 21.7956 0 21L0 12H8V14C8 14.5304 8.21071 15.0391 8.58579 15.4142C8.96086 15.7893 9.46957 16 10 16H14C14.5304 16 15.0391 15.7893 15.4142 15.4142C15.7893 15.0391 16 14.5304 16 14V12H24V21C24 21.7956 23.6839 22.5587 23.1213 23.1213C22.5587 23.6839 21.7956 24 21 24ZM2 14V21C2 21.2652 2.10536 21.5196 2.29289 21.7071C2.48043 21.8946 2.73478 22 3 22H21C21.2652 22 21.5196 21.8946 21.7071 21.7071C21.8946 21.5196 22 21.2652 22 21V14H18C18 15.0609 17.5786 16.0783 16.8284 16.8284C16.0783 17.5786 15.0609 18 14 18H10C8.93913 18 7.92172 17.5786 7.17157 16.8284C6.42143 16.0783 6 15.0609 6 14H2Z"
-                    fill="white"
-                  />
-                  <path d="M22 8H2V10H22V8Z" fill="white" />
-                  <path d="M22 4H2V6H22V4Z" fill="white" />
+                <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.5 12.5H14V15.5H11.5V18H8.5V15.5H6V12.5H8.5V10H11.5V12.5ZM20 5.879V24H0V3C0 2.20435 0.316071 1.44129 0.87868 0.87868C1.44129 0.31607 2.20435 0 3 0L14.121 0L20 5.879ZM17 21V8H12V3H3V21H17Z" fill="white"/>
                 </svg>
               }
+              className={path==="/005/task" ? "active-nav":""}
             >
-              <Link to="/employee-time-sheet" style={{ color: "#fff" }}>
-                Timesheet
+              <Link to="/005/task" style={{ color: "#fff" }}>
+                Tasks
               </Link>
             </MenuItem>
           </Menu>
@@ -129,10 +145,10 @@ export default function Layout({ children }) {
                   <path d="M12 6H10V20H12V6Z" fill="white" />
                 </svg>
               }
+              className={path==="/005/attendance" ? "active-nav":""}
             >
-              <Link to="/employee-attendance-leave" style={{ color: "#fff" }}>
-                {" "}
-                Attendance & Leave{" "}
+              <Link to="/005/attendance" style={{ color: "#fff" }}>
+                Attendance
               </Link>
             </MenuItem>
           </Menu>
@@ -160,9 +176,10 @@ export default function Layout({ children }) {
                   />
                 </svg>
               }
+              className={path==="/005/salary" ? "active-nav":""}
             >
-              <Link to="/employee-payroll" style={{ color: "#fff" }}>
-                Payroll{" "}
+              <Link to="/005/salary" style={{ color: "#fff" }}>
+                Salary & Benefit
               </Link>
             </MenuItem>
           </Menu>
@@ -189,34 +206,11 @@ export default function Layout({ children }) {
                   </defs>
                 </svg>
               }
-              className={path === "/employee-data" ? "active-nav" : ""}
+              className={path==="/005/leaves" ? "active-nav":""}
             >
-              <a href="/employee-data" style={{ color: "#fff" }}>
-                Employee Data
-              </a>
-            </MenuItem>
-          </Menu>
-          <Menu>
-            <MenuItem
-              icon={
-                <svg
-                  width="20"
-                  height="24"
-                  viewBox="0 0 20 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11.5 12.5H14V15.5H11.5V18H8.5V15.5H6V12.5H8.5V10H11.5V12.5ZM20 5.879V24H0V3C0 2.20435 0.316071 1.44129 0.87868 0.87868C1.44129 0.31607 2.20435 0 3 0L14.121 0L20 5.879ZM17 21V8H12V3H3V21H17Z"
-                    fill="white"
-                  />
-                </svg>
-              }
-              className={path === "/task-management" ? "active-nav" : ""}
-            >
-              <a href="/task-management" style={{ color: "#fff" }}>
-                Task Manager
-              </a>
+              <Link to="/005/leaves" style={{ color: "#fff" }}>
+                Leave & Holidays
+              </Link>
             </MenuItem>
           </Menu>
           <Menu>
@@ -241,8 +235,9 @@ export default function Layout({ children }) {
                   <path d="M9 17H7V19H9V17Z" fill="white" />
                 </svg>
               }
+              className={path==="/005/calendar" ? "active-nav":""}
             >
-              <Link to="/calendar" style={{ color: "#fff" }}>
+              <Link to="/005/calendar" style={{ color: "#fff" }}>
                 Calender
               </Link>
             </MenuItem>
@@ -360,7 +355,7 @@ export default function Layout({ children }) {
                   {/* <Messages /> */}
                 </li>
                 <li className={styles.adminPaneDrop}>
-                  <span className="mr-2">Admin</span>
+                  <span className='mr-2'>{profile?.lastName}</span>
                   <Avatar>AM</Avatar>
                   <svg
                     width="24"
@@ -398,3 +393,14 @@ export default function Layout({ children }) {
     </>
   );
 }
+
+
+const mapStateToProps = (state)=>{
+
+  return{
+    profile:state.employee
+  }
+}
+
+export default connect(mapStateToProps)(Layout)
+

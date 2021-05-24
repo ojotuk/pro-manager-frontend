@@ -38,3 +38,72 @@
 .active-nav{
   background:#293665 ;
 }
+
+.table-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: yellow; */
+  width: 100%;
+  font-size: 14px;
+}
+
+.MuiLinearProgress-colorPrimary{
+  background-color: #ddd !important;
+  border-radius: 5px;
+
+}
+.forth-task .MuiLinearProgress-barColorPrimary{
+  background: linear-gradient(90deg, #15B572 0%, #016D40 100%) !important;
+  border-radius: 5px;
+}
+.over-due-task .MuiLinearProgress-barColorPrimary{
+  background: red !important;
+}
+
+/* memployee dashboard */
+.bar-card{
+width: 100%;
+border: thin solid #ddd;
+border-radius: 5px;
+}
+.bar-card .bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 15px 10px 15px;
+  font-size: 16px;
+  background-color: #fff;
+}
+.bar-card ul{
+  list-style: none;
+}
+.bar-card ul li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.switch-bars .switchable{
+padding: 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.switchable h6{
+  flex: 1;
+  padding: 20px 15px 10px 15px;
+  border-bottom: 3px solid transparent;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.active-tab-ba{
+  border-bottom: 3px solid #15255d !important;
+
+}
+.switchable h6:first-child{
+  border-right: 2px solid #ddd;
+}
+

@@ -22,6 +22,10 @@ const companyReducer = (state = initialState, action) => {
         return {
             ...state,employeeProfile:{...action.payload}
         }
+        case "GET_TASKS":
+          return{
+            ...state,tasks:action.payload
+          }
       default:
         return state;
     } 

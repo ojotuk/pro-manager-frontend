@@ -25,8 +25,8 @@ function SignIn({auth}) {
       const token = await signInCompany(input);
       if(token) {
       dispatch(loadStop())
-      Flash('success','Welcome back','Welcome',5000)
-        return dispatch(signInSuccess(token))
+      Flash('success','Welcome back','Welcome',5000);
+        return dispatch(signInSuccess(token));
       }else{
       dispatch(loadStop())
         return Flash('error','Invalid login credentials','Error',5000)
@@ -71,7 +71,7 @@ function SignIn({auth}) {
           <img src={signinimg} alt='brand'/>
         </div>
       </div>
-    </div>: <Redirect to={{pathname: '/console', state: {from: "/signin"}}}/> }
+    </div>: auth.auth.userType==="CL04" ? <Redirect to={{pathname: '/console', state: {from: "/signin"}}}/> : <Redirect to={{pathname: '/005/console', state: {from: "/signin"}}}/>}
     </>
   );
 }

@@ -1,0 +1,370 @@
+.layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+}
+
+.layout .sideWrapper {
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  position: relative;
+  z-index: 1000;
+}
+
+.layout .sideWrapper .sideBarHeader {
+  padding: 0 20px;
+  padding-top: 80px;
+  width: 270px;
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.layout .sideWrapper .toggleCollapse {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  width: 100%;
+  padding-right: 20px;
+  font-size: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.layout .views {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #f7f7f7;
+  padding: 50px 0 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.layout .views .toolBar {
+  position: static;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.layout .views .toolBar .togglers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.layout .views .toolBar .togglers span {
+  cursor: pointer;
+  display: none;
+}
+
+.layout .views .toolBar .togglers span i {
+  font-size: 20px;
+  color: #fff;
+}
+
+.layout .views .toolBar .panels {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+}
+
+.layout .views .toolBar .panels .search {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  border: thin solid #c4c4c4;
+  border-radius: 3px;
+  background-color: #fff;
+  margin-right: 40px;
+}
+
+.layout .views .toolBar .panels .search input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: none;
+  font-size: 16px;
+}
+
+.layout .views .toolBar .panels .search .svgWrapper {
+  width: 40px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.layout .views .toolBar .panels .panelRight {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.layout .views .toolBar .panels .panelRight .ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.layout .views .toolBar .panels .panelRight .ul li {
+  padding: 0 10px;
+  cursor: pointer;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.layout .views .toolBar .panels .panelRight .ul li i {
+  font-size: 20px;
+  color: #000;
+}
+
+.layout .views .toolBar .panels .panelRight .ul li sup {
+  font-size: 14px;
+  color: #000;
+  padding: 5px;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminChat {
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminChat .messagePane {
+  position: absolute;
+  top: 100px;
+  z-index: 10;
+  background-color: #fff;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminChat:hover {
+  background-color: #1fc881;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminChat:hover .messagePane {
+  top: 60px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminChat:hover .messagePane span {
+  font-size: 16px !important;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminChat:hover .messagePane i {
+  color: #1fc881;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminNotify {
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminNotify .notifyPane {
+  position: absolute;
+  bottom: -70px;
+  z-index: 10;
+  background-color: #fff;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminNotify .notifyPane .notifyContainer {
+  padding: 20px;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminNotify:hover {
+  background-color: #1fc881;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminNotify:hover .notifyPane {
+  bottom: -55px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminPaneDrop {
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminPaneDrop .adminPane {
+  position: absolute;
+  bottom: -130px;
+  z-index: 10;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  width: 200px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminPaneDrop .adminPane .adminContainer {
+  padding: 20px;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminPaneDrop .adminPane .adminContainer ul {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminPaneDrop .adminPane .adminContainer ul li {
+  margin-bottom: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  padding: 5px 10px;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminPaneDrop .adminPane .adminContainer ul li a {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 500;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminPaneDrop .adminPane .adminContainer ul li a i {
+  font-size: 12px;
+  color: #1fc881;
+  margin-right: 5px;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminPaneDrop .adminPane .adminContainer ul li:last-child {
+  margin-bottom: 0;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminPaneDrop .adminPane .adminContainer ul li:hover {
+  background: -webkit-gradient(linear, right top, left top, from(#1fc881), to(#0a0362));
+  background: linear-gradient(to left, #1fc881, #0a0362);
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminPaneDrop .adminPane .adminContainer ul li:hover a {
+  color: #fff;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminPaneDrop:hover {
+  background-color: #1fc881;
+}
+
+.layout .views .toolBar .panels .panelRight .ul .adminPaneDrop:hover .adminPane {
+  bottom: -110px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.layout .views .toolBar .panels .padNone {
+  padding-right: 0;
+}
+
+.layout .views .toolBar .panels .panelLeft h3 {
+  color: #fff;
+}
+
+.layout .layoutChildren {
+  padding: 0 15px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-family: "Montserrat", sans-serif;
+  overflow: auto;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .layout .views .toolBar .togglers span {
+    display: inline;
+  }
+}
+/*# sourceMappingURL=Layout.module.css.map */
