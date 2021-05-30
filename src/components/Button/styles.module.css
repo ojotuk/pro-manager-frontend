@@ -5,6 +5,7 @@
   width: fit-content;
   position: relative;
   z-index: 1;
+  border-radius: 3px;
 }
 
 .btn button {

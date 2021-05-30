@@ -1,0 +1,20 @@
+
+.box{
+    padding:0px;
+    background-color: #fff;
+    border: thin solid #ddd;
+    border-radius: 3px;
+    .title{
+        // border-bottom: thin solid #888;
+        padding: 20px 20px;
+        h4{
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+    }
+    .children{
+        padding: 20px;
+    }
+}

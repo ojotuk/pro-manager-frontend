@@ -16,7 +16,6 @@ import {
 import styles from "./Layout.module.css";
 import logo from "./../../../logo.svg";
 import { Avatar } from "@material-ui/core";
-import useAxios from "../../../utility/axios-token-manager/init";
 import {getMyProfile} from './../../../redux/actions/employee';
 
 //
@@ -30,25 +29,11 @@ function Layout({ children, profile }) {
   const path = window.location.pathname;
   // 
 useEffect(()=>{
-  const getProfile=async ()=>{
-    try {
-    const response =await useAxios.get('/app/v2/005/my-profile')
-      if(response){
-        // console.log(response.data)
-        dispatch(getMyProfile(response.data))
-        return response.data
-      }
-    } catch (error) {
-      console.log(error)
-      return error
-    }
-  }
+//  limit axios call on navigation
   if(profile.reload){
-  getProfile()
+    dispatch(getMyProfile())
   }
-  // else{
-  //   console.log('not reloading')
-  // }
+
 },[profile.reload,dispatch])
   
   const SideBar = ({ collapsed }) => {

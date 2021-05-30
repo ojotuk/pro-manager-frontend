@@ -89,7 +89,6 @@ function TaskSender({ state, expandHandler, expand, xHandler }) {
     } else {
       newChecked.splice(currentIndex, 1);
     }
-
     setChecked(newChecked);
   };
 
@@ -121,8 +120,6 @@ function TaskSender({ state, expandHandler, expand, xHandler }) {
     } catch (err) {
       Flash("error", `Server error`, "Error", 3000);
     }
-
-    // console.log(response)
   };
   return (
     <Paper className={styles.taskPaper}>

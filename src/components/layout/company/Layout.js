@@ -191,9 +191,9 @@ export default function Layout({ children }) {
               }
               className={path === "/employee-data" ? "active-nav" : ""}
             >
-              <a href="/employee-data" style={{ color: "#fff" }}>
+              <Link to="/employee-data" style={{ color: "#fff" }}>
                 Employee Data
-              </a>
+              </Link>
             </MenuItem>
           </Menu>
           <Menu>
@@ -214,9 +214,9 @@ export default function Layout({ children }) {
               }
               className={path === "/task-management" ? "active-nav" : ""}
             >
-              <a href="/task-management" style={{ color: "#fff" }}>
+              <Link to="/task-management" style={{ color: "#fff" }}>
                 Task Manager
-              </a>
+              </Link>
             </MenuItem>
           </Menu>
           <Menu>

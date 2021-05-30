@@ -97,10 +97,11 @@ const ReactTable = ({ task }) => {
         </div>
         <div className='col-lg-6'>
         <Typography>Team Lead</Typography>
-        <Chip label={props.data.teamLead.firstName}/>
-        <Typography>Team Members</Typography>
-        {props.data.teams.map((item,index)=><Chip key={index} avatar={<Avatar></Avatar>} label={item.firstName}/>)}
-
+        <Link to={`/employee-data#/profile/${props.data.teamLead._id}`} >
+              <Chip avatar={<Avatar></Avatar>} label={props.data.teamLead.firstName} className='cursor-p'/>
+        </Link>
+        <Typography className='mt-2'>Team Members</Typography>
+        {props.data.teams.map((item,index)=><Link to={`/employee-data#/profile/${item._id}`}><Chip className='cursor-p' key={index} avatar={<Avatar></Avatar>} label={item.firstName}/></Link>)}
         </div>
         </div>
       </Paper>

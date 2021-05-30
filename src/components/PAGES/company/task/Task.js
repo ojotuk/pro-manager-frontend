@@ -12,6 +12,7 @@ function Index() {
     const dispatch = useDispatch()
     // 
     useEffect(()=>{
+
         dispatch(getTask())
     },[dispatch])
     return (

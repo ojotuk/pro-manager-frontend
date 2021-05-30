@@ -1,20 +1,26 @@
 import useAxios from "../../utility/axios-token-manager/init"
+import {loadStart,loadStop} from './loading'
 
+
+// 
  const getTaskApi =async ()=>{
     try {
         const tasks = await useAxios.get('/app/v2/004/all-task')
-        // console.log(tasks.data.tasks);
         return tasks.data.tasks
     } catch (error) {
      console.log(error)   
     }
     
 }
-export const getCompanyProfile=(data)=>{
-    return{
+export const getCompanyProfile=()=> async (dispatch)=>{
+    dispatch(loadStart())
+    const response = await useAxios.get("/app/v2/004/all-employees");
+    dispatch(loadStop())
+    return dispatch(
+    {
         type:"GET_CLIENT_PROFILE",
-        payload:data
-    }
+        payload:response.data.client
+    })
 }
 export const getEmployeeProfile=(data)=>{
     return{

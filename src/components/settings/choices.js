@@ -7,3 +7,8 @@ export const employementType = [
     "Contract",
     "Full-Time",    
     ]
+
+export const leaveType = [
+    "Sick Leave",
+    "Maternity"
+]
