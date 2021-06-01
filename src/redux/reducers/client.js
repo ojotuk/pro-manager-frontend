@@ -26,6 +26,10 @@ const companyReducer = (state = initialState, action) => {
           return{
             ...state,tasks:action.payload
           }
+        case "GET_LEAVES":
+          return{
+            ...state,leaves:action.payload
+          }
       default:
         return state;
     } 

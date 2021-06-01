@@ -24,3 +24,21 @@ body {
   border:2px solid rgb(255, 238, 0);
   background-color: rgba(248, 233, 16, 0.1);
 }
+.theme-red{
+  border:2px solid rgba(255, 0, 0, 0.925);
+  background-color: rgba(248, 16, 16, 0.1);
+}
+.theme-green{
+  border:2px solid rgb(123, 255, 0);
+  background-color: rgba(16, 248, 28, 0.1);
+}
+.theme-green,.theme-red,.theme-yellow{
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  border-radius: 3px;
+}
+.btn-theme{
+  background-color: #15255d !important;
+  color: #fff !important;
+}

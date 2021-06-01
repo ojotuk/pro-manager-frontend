@@ -6,7 +6,7 @@ import SignUp from './components/signup/SignUp';
 import SignIn from './components/signin/SignIn';
 import Dashboard from "./components/PAGES/company/dashboard/Index";
 import EmployeeData from "./components/PAGES/company/employeeData/EmployeeData";
-import Attendance from "./components/PAGES/company/attendanceLeave/Attendance";
+import Attendance from "./components/PAGES/company/attendanceLeave/Index";
 import Payroll from "./components/PAGES/company/payroll/Payroll";
 import TimeSheet from "./components/PAGES/company/timeSheet/TimeSheet";
 import Calendar from "./components/PAGES/company/calender/Calender";

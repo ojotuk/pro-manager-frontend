@@ -107,5 +107,24 @@ align-items: center;
   border-right: 2px solid #ddd;
 }
 
-
-
+.tab-leave{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tab-leave::after{
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0%;
+  background-color: #15255d;
+  margin-top: 10px;
+  transition: .3s linear;
+}
+.tab-leave-active::after{
+  width: 50% !important;
+}
+.color-blur{
+  color: #666;
+}

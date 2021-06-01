@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import { connect } from "react-redux";
 import { useState } from "react";
-import Update from './Update'
+// import Update from './Update'
 import classnames from "classnames";
 
 
@@ -154,7 +154,7 @@ const ReactTable = ({ profile }) => {
           <DataTable
             title={
               <div className="table-title">
-                <h6>LEAVE HISTORY</h6>
+                <h6>MY ATTENADNCE HISTORY</h6>
               </div>
             }
             columns={columns}
@@ -170,7 +170,6 @@ const ReactTable = ({ profile }) => {
           />
         </Card>
       </div>
-      <Update state={open} data={modalData} handleModal={handleModal} type={type}/>
     </>
   );
 };
