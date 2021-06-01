@@ -10,7 +10,6 @@ import useAxios from "../../../../../../../utility/axios-token-manager/init";
 import styles from "./styles.module.css";
 import Flash from "./../../../../../../../utility/Flash";
 import { useDispatch } from "react-redux";
-import { updateCurrentState } from "./../../../../../../../redux/actions/employee";
 import { getLeaves } from "./../../../../../../../redux/actions/client";
 import { loadStart, loadStop } from "./../../../../../../../redux/actions/loading";
 
