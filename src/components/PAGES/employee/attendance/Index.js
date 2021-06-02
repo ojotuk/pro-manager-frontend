@@ -19,8 +19,6 @@ export default function Index() {
         <div>
             <ReactTable />
         </div>
-        Attendance
-
         </Layout>
         </>
     )

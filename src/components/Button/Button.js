@@ -5,14 +5,14 @@ import styles from './styles.module.css'
 
 
 // 
-export default function ButtonComponent({text,link}) {
+export default function ButtonComponent({text,link, onClick}) {
     return (
         <div className={styles.btn}>
             {link? 
             <Link to={link}>
            <Button>{text}</Button>
             </Link>: 
-           <Button>{text}</Button>
+           <Button onClick={onClick ? ()=>onClick():null}>{text}</Button>
             }
         </div>
     )
