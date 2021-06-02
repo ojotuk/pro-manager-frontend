@@ -44,6 +44,7 @@ const ReactTable = ({ profile }) => {
       {
         name: "Actual Check Out",
         cell:row=> {
+          if(!row.checkOut) return ""
           const date=new Date(row.checkOut);
           return date.toLocaleTimeString('en-US')
           
