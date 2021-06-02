@@ -30,8 +30,11 @@ const ReactTable = ({ profile }) => {
       },
       {
         name: "Actual Check In",
-        selector: "checkIn",
         sortable: true,
+        cell:row=> {
+          const date=new Date(row.checkIn);
+          return date.toLocaleTimeString('en-US')
+        },
       },
       {
         name: "Expected Check Out",
@@ -40,7 +43,11 @@ const ReactTable = ({ profile }) => {
       },
       {
         name: "Actual Check Out",
-        selector: "checkOut",
+        cell:row=> {
+          const date=new Date(row.checkOut);
+          return date.toLocaleTimeString('en-US')
+          
+        },
         sortable: true,
       },
       {
