@@ -7,7 +7,9 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import configureStore from "./redux/configureStore/index";
 import 'react-notifications/dist/react-notifications.css'
+import 'react-big-calendar/lib/css/react-big-calendar.css'
 
+// 
 const store = configureStore();
 
 //

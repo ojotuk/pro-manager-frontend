@@ -42,3 +42,17 @@ body {
   background-color: #15255d !important;
   color: #fff !important;
 }
+
+
+.css-1lcdd13-TitleWrapper.active{
+  background-color: #15255d !important;
+  color: #fff !important;
+}
+.css-vtfjjl-Circle:not(.using-icon).active::after{
+  color: #fff !important;
+
+}
+.css-vtfjjl-Circle:not(.using-icon).active::after{
+  background-color: #38efc3 !important;
+
+}

@@ -26,6 +26,23 @@ const getLeavesApi = async (dispatch) => {
     return [];
   }
 };
+const getAttendanceApi = async (dispatch) => {
+  try {
+    dispatch(loadStart());
+    const response = await useAxios.get("/app/v2/004/attendance/all");
+    dispatch(loadStop());
+    // console.log(response)
+    if (response.data.applications) {
+      return response.data.applications;
+    } else {
+      return [];
+    }
+  } catch (error) {
+    console.log(error);
+    dispatch(loadStop());
+    return [];
+  }
+};
 export const getCompanyProfile = () => async (dispatch) => {
   dispatch(loadStart());
   const response = await useAxios.get("/app/v2/004/all-employees");
@@ -52,6 +69,12 @@ export const getLeaves = () => async (dispatch) => {
   return dispatch({
     type: "GET_LEAVES",
     payload: await getLeavesApi(dispatch),
+  });
+};
+export const getAttendance = () => async (dispatch) => {
+  return dispatch({
+    type: "GET_ATTENDANCE",
+    payload: await getAttendanceApi(dispatch),
   });
 };
 

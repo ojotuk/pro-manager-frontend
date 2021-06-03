@@ -5,6 +5,7 @@ const initialState={
     employees:[],
     leaves:[],
     tasks:[],
+    attendances:[],
     employeeProfile:{}
 }
 
@@ -29,6 +30,10 @@ const companyReducer = (state = initialState, action) => {
         case "GET_LEAVES":
           return{
             ...state,leaves:action.payload
+          }
+        case "GET_ATTENDANCE":
+          return{
+            ...state,attendances:action.payload
           }
       default:
         return state;
