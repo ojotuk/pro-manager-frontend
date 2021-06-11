@@ -15,7 +15,9 @@ return (
       startAccessor="start"
       endAccessor="end"
       style={{ height: 700 }}
-    />
+      selectable
+      onSelectSlot={(e)=>console.log(e)}
+      />
   </div>
 );
 }

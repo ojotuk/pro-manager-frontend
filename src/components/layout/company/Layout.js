@@ -15,7 +15,7 @@ import {
 
 import styles from "./Layout.module.css";
 import logo from "./../../../logo.svg";
-import { Avatar } from "@material-ui/core";
+import { Avatar, Badge } from "@material-ui/core";
 
 //
 export default function Layout({ children }) {
@@ -162,7 +162,7 @@ export default function Layout({ children }) {
               }
             >
               <Link to="/employee-payroll" style={{ color: "#fff" }}>
-                Payroll{" "}
+              <Badge badgeContent="coming soon" > Payroll </Badge>
               </Link>
             </MenuItem>
           </Menu>

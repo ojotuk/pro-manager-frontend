@@ -6,14 +6,15 @@ import PageTitle from '../../../PageTitle/Title'
 import Attendance from './components/attendance/Attendance'
 import Controls from './components/Controls'
 import Leave from './components/leave/Leave'
-import {getLeaves} from './../../../../redux/actions/client'
+import {getLeaves,getAttendance} from './../../../../redux/actions/client'
 
 
 function Index() {
 const dispatch = useDispatch();
 
 useEffect(()=>{
-    dispatch(getLeaves())
+    dispatch(getLeaves());
+    dispatch(getAttendance());
 },[dispatch])
     const [tab,setTab] = useState(0);
     const handleTabDisplays=()=>{
