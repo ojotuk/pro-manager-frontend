@@ -3,6 +3,7 @@
   display: -ms-flexbox;
   display: flex;
   height: 100vh;
+  background-color: red;
 }
 
 .layout .sideWrapper {
@@ -54,6 +55,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow-y: auto;
 }
 
 .layout .views .toolBar {
@@ -357,7 +359,7 @@
       -ms-flex: 1;
           flex: 1;
   font-family: "Montserrat", sans-serif;
-  overflow: auto;
+  overflow-y: auto;
   position: relative;
   overflow-x: hidden;
 }

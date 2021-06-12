@@ -20,6 +20,14 @@ const ReactTable = ({ applications }) => {
   const columns = React.useMemo(
     () => [
       {
+        name: "Date",
+        // selector: 'productName',
+        sortable: true,
+        cell: (row) => (
+          <div className="d-flex align-items-center">{`${row.date}`}</div>
+        ),
+      },
+      {
         name: "Name",
         // selector: 'productName',
         sortable: true,

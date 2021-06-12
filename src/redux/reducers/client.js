@@ -6,6 +6,7 @@ const initialState={
     leaves:[],
     tasks:[],
     attendances:[],
+    memo:[],
     employeeProfile:{}
 }
 
@@ -19,6 +20,10 @@ const companyReducer = (state = initialState, action) => {
         return {
             ...state,...action.payload
         };
+        case "UPDATE-SNAPSHOT":
+          return{
+            ...state,...action.payload
+          }
     case  "GET_EMPLOYEE_PROFILE":
         return {
             ...state,employeeProfile:{...action.payload}

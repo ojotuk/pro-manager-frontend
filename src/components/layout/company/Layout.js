@@ -162,7 +162,7 @@ export default function Layout({ children }) {
               }
             >
               <Link to="/employee-payroll" style={{ color: "#fff" }}>
-              <Badge badgeContent="coming soon" > Payroll </Badge>
+              <Badge color='error' badgeContent="coming soon"  className='w-100' >Payroll</Badge>
               </Link>
             </MenuItem>
           </Menu>
@@ -391,7 +391,9 @@ export default function Layout({ children }) {
           <SideBar collapsed={navCollapse} />
         </div>
         <div className={styles.views}>
+          <div>
           <ToolBar />
+          </div>
           <div className={styles.layoutChildren}>{children}</div>
         </div>
       </section>

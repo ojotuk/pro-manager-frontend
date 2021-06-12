@@ -69,12 +69,12 @@ export default function Update({ state, data, handleModal,type }) {
           <LeaveForm data={data}/>
           </div>
           :
-          <div>Access Denied
+          <div>Are you sure you want to do this ?
               <br></br>
               <Typography variant='body1'>
-                Only team lead can perform progress update.
+                Click the button below to proceed
                 </Typography>
-                <Button onClick={()=>handleDel()}>Delete</Button>
+                <Button onClick={()=>handleDel()} variant='outlined' className={"mt-4"}>Delete</Button>
           </div>
         }
         </div>

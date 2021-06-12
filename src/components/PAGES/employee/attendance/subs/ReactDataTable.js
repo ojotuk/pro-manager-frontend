@@ -15,7 +15,13 @@ const ReactTable = ({ profile }) => {
   useEffect(() => {
     setData(profile);
   }, [profile]);
+const calTimeSpent=(diff)=>{
+  const hours = Math.floor(diff / 3600);
+  const mins = Math.floor((diff % 3600) / 60);
+  const sec = Math.floor((diff % 3600) % 60);
 
+  return `${hours} hr : ${mins} min : ${sec} s`
+}
   const columns = React.useMemo(
     () => [
       {
@@ -53,7 +59,12 @@ const ReactTable = ({ profile }) => {
       },
       {
         name: "Total Hours",
-        selector: "ends",
+        cell:row=> {
+          if(!row.checkOut) return ""
+          const timeDiff= row.checkOut - row.checkIn;
+          return calTimeSpent(timeDiff / 1000)
+          
+        },
         sortable: true,
       },
     ],

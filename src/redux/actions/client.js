@@ -52,6 +52,13 @@ export const getCompanyProfile = () => async (dispatch) => {
     payload: response.data.client,
   });
 };
+
+export const updateSnapShot = (data)=>{
+  return{
+    type:"UPDATE-SNAPSHOT",
+    payload:data
+  }
+}
 export const getEmployeeProfile = (data) => {
   return {
     type: "GET_EMPLOYEE_PROFILE",
