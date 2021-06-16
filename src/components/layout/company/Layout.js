@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector} from "react-redux";
 import { signUOutCompany } from "../../../redux/actions/auth";
 import "./../../../asset/css/side-bar.css";
 import { Link } from "react-router-dom";
+import Marquee from "react-fast-marquee";
 // import classnames from 'classnames'
 import {
   ProSidebar,
@@ -288,6 +289,8 @@ export default function Layout({ children }) {
   };
 
   const ToolBar = () => {
+    const {companyName} = useSelector(state => state.company)
+
     return (
       <div className={styles.toolBar}>
         <div className="container-fluid">
@@ -296,6 +299,9 @@ export default function Layout({ children }) {
               <i className="bi bi-grid-3x3-gap-fill"></i>
             </span>
           </div>
+          <Marquee>
+        {companyName}
+      </Marquee>
           <div className={styles.panels}>
             <div className={styles.search}>
               <div className={styles.svgWrapper}>

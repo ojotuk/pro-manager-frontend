@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import Layout from "./../../../layout/company/Layout";
 import PageTitle from "./../../../PageTitle/Title";
@@ -11,6 +11,7 @@ import { Card, TextField, Typography } from "@material-ui/core";
 import ReactDataTableTask from "./subs/ReactDataTableTask";
 import { Link } from "react-router-dom";
 import CustomBtn from "./../../../Button/Button";
+import useAxios from "../../../../utility/axios-token-manager/init";
 
 function Index() {
   const dispatch = useDispatch();
@@ -20,6 +21,17 @@ function Index() {
     dispatch(getLeaves());
     dispatch(getAttendance());
   }, [dispatch]);
+  const [post, setPost] = useState("");
+  const handleChange = (e) => {
+    setPost(e.target.value);
+  };
+  const handlePost = async () => {
+    const response = await useAxios.post("/app/v2/004/announcement/add", {
+      post: post,
+    });
+
+    console.log(response.data);
+  };
 
   return (
     <>
@@ -30,20 +42,22 @@ function Index() {
         <br></br>
         <Typography>Welcome</Typography>
         <div className="bg-white mt-3">
-          <div className='row w-80'>
-          <div className="col-lg-8">
-            <TextField
-              variant="outlined"
-              fullWidth
-              multiline
-              rows={4}
-              placeholder="Post an announcement"
-            ></TextField>
+          <div className="row w-80">
+            <div className="col-lg-8">
+              <TextField
+                variant="outlined"
+                fullWidth
+                multiline
+                rows={4}
+                placeholder="Post an announcement"
+                value={post}
+                onChange={handleChange}
+              ></TextField>
+            </div>
+            <div className="col-lg-4 d-flex flex-column justify-content-end">
+              <CustomBtn text="Create Post" onClick={handlePost} />
+            </div>
           </div>
-          <div className="col-lg-4 d-flex flex-column justify-content-end">
-            <CustomBtn text="Create Post" />
-          </div>
-        </div>
         </div>
         <div className="row">
           <div className="col-lg-8">
