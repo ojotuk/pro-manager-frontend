@@ -1,6 +1,6 @@
 import { Button } from "@material-ui/core";
 import React,{useState} from "react";
-import {Link, Redirect} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import Brand from "../Brand/Brand";
 import signupimg from "./../../asset/img/Accept tasks-amico 1.png";
 import './style.css'
@@ -14,7 +14,7 @@ import {loadStart,loadStop} from './../../redux/actions/loading'
 import validations from './validation.js';
 
 
-function SignUp({auth}) {
+function SignUp() {
 
   const dispatch = useDispatch()
     const [input,setInput] = useState(
@@ -50,7 +50,8 @@ function SignUp({auth}) {
       if(data) {
         dispatch(loadStop())
         Flash('success','Signup was successful','Welcome',5000)
-       return  dispatch(signUpCompanySuccess(data,true))
+        dispatch(signUpCompanySuccess(data,true));
+        window.location.href='/console'
       }else{
         dispatch(loadStop())
         return Flash('error','Fail to sign up, account already exist','Error',5000)
@@ -58,7 +59,6 @@ function SignUp({auth}) {
     }
   return (
     <>
-    {!auth.isLogged ? 
     <div className='container sign-in-section'>
             <Brand />
       <div className="sign-up">
@@ -129,7 +129,8 @@ function SignUp({auth}) {
           <img src={signupimg} alt='brand'/>
         </div>
       </div>
-    </div> : <Redirect to={{pathname: '/console', state: {from: "/signup"}}}/> }
+    </div> 
+    
     </>
   );
 }

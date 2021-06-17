@@ -48,9 +48,9 @@ function SignIn({auth}) {
           </div>
           <form onChange={handleChange} className='data-form'>
             <div className='form-field'>
-              <label>Company Email</label>
+              <label>Email</label>
               <div className='input-wrapper'>
-                <input placeholder="Enter your company email" type='email' name='companyEmail' value={input.companyEmail} />
+                <input placeholder="Enter your email" type='email' name='companyEmail' value={input.companyEmail} />
               </div>
             </div>
         
